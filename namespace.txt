@@ -1,0 +1,31 @@
+calls = 0
+def count_calls():
+    global calls
+    calls=calls+1
+def string_info(string:str):
+    len_=len(string)
+    top=string.upper()
+    bottom=string.lower()
+    res=[]
+    res.append(len_)
+    res.append(top)
+    res.append(bottom)
+    print(res)
+    count_calls()
+def is_contains(string:str,list_to_search:list):
+    import re
+    st=string.lower()
+    list=str(list_to_search)
+    list1=list.lower()
+    res=re.search(st, list1)
+    if res != None:
+        print(True)
+    else:
+        print(False)
+    count_calls()
+
+string_info('crocoDile')
+string_info('hiPpopotamus')
+is_contains('1', [6,'fyz','u','3'])
+is_contains('der', [4,'DEr',6])
+print(calls)
